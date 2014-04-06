@@ -1,5 +1,6 @@
 class InvestmentDecisionCriteria
   
+  
   def self.rate_of_return(initial_price, current_price, income=0)
     return ((current_price.to_f - initial_price) + income) / initial_price
   end
@@ -49,6 +50,8 @@ end
 
 
 
+
 puts InvestmentDecisionCriteria.net_present_value(10, 4, 0.04, [1])
 puts InvestmentDecisionCriteria.net_present_value(400, 4, 0.1, [100, -150, 200, 500])
 puts InvestmentDecisionCriteria.internal_rate_of_return(400, 4, [100, -150, 200, 500])
+
