@@ -29,4 +29,12 @@ describe InvestmentDecisionCriteria, "#rate_of_return" do
   end
 end
 
+describe InvestmentDecisionCriteria, "#time_of_return" do
+ it "should give time of return" do
+   periods = 1.5
+   rate_of_return = self.rate_of_return #not sure how to call on this
+    InvestmentDecisionCriteria.time_of_return(periods).should eq(1/(1 + (rate_of_return ** periods)) ** (1/periods) - 1)
+  end
+end
+
  
