@@ -1,7 +1,7 @@
 class InvestmentDecisionCriteria
   
   def self.rate_of_return(initial_price, current_price, income=0)
-    return (current_price.to_f + income) / initial_price
+    return ((current_price.to_f - initial_price) + income) / initial_price
   end
 
   def self.time_of_return(initial_price, current_price)
@@ -18,8 +18,8 @@ class InvestmentDecisionCriteria
 
 end
 
-puts InvestmentDecisionCriteria.rate_of_return(100, 117, 5)
-puts InvestmentDecisionCriteria.rate_of_return(90, 105)
-puts InvestmentDecisionCriteria.time_of_return(90, 105)
 
-puts InvestmentDecisionCriteria.net_present_value(10, 4, 0.04, 1)
+puts InvestmentDecisionCriteria.rate_of_return(350, 400)
+puts InvestmentDecisionCriteria.time_of_return(350, 400)
+
+puts InvestmentDecisionCriteria.net_present_value(0, 4, 0.05, -10)
